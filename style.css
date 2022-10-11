@@ -9,3 +9,15 @@
     right: 400px;
     top: 15px;
 }
+
+#addGoalButton {
+    position: absolute;
+    left: 700px;
+    top: 700px; 
+}
+
+#addCardButton {
+    position: absolute;
+    right: 700px;
+    top: 700px; 
+}
