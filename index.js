@@ -41,3 +41,16 @@ class Card{
         }
     }
 }
+
+function endOfGame(){
+    if (teamAGoals.length > teamBGoals.length){
+        console.log("Winner: Team A");
+    }
+    else if (teamAGoals.length , teamBGoals.length){
+        console.log("Winner: Team B");
+    }
+    else{
+        console.log("Draw");
+    }
+
+}
