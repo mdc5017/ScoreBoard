@@ -1,0 +1,11 @@
+#headerOne {
+    position: absolute;
+    left: 400px;
+    top: 15px;
+}
+
+#headerTwo {
+    position: absolute;
+    right: 400px;
+    top: 15px;
+}
