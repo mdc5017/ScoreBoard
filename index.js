@@ -133,8 +133,10 @@ function startTimer() {
     timeLeft = TIME_LIMIT - timePassed;
     //document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
     timeLeftParagraph.textContent  = formatTimeLeft(timeLeft);
- 
-      setCircleDasharray();
+    if (timeLeft== 0){
+        timeLeftParagraph.textContent = "0:00";
+    }
+    setCircleDasharray();
     }, 1000);
 }
 
