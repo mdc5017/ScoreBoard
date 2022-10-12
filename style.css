@@ -1,23 +1,55 @@
 #headerOne {
     position: absolute;
-    left: 400px;
-    top: 15px;
+    left: 20%;
+    top: 10%;
 }
 
 #headerTwo {
     position: absolute;
-    right: 400px;
-    top: 15px;
+    right: 20%;
+    top: 10%;
 }
 
-#addGoalButton {
+#teamAYellow{
     position: absolute;
-    left: 700px;
-    top: 700px; 
+    left: 11%;
+    top: 50%;
 }
 
-#addCardButton {
+#teamARed{
     position: absolute;
-    right: 700px;
-    top: 700px; 
+    left: 33%;
+    top: 50%;
+}
+
+#teamBYellow{
+    position: absolute;
+    right: 33%;
+    top: 50%;
+}
+
+#teamBRed{
+    position: absolute;
+    right: 11%;
+    top: 50%;
+}
+
+#addGoalForm {
+    position: absolute;
+    left: 30%;
+    top: 80%; 
+}
+
+#addCardForm {
+    position: absolute;
+    right: 30%;
+    top: 80%; 
+}
+
+#addGoalForm {
+    display: none;
+}
+
+#addCardForm {
+    display: none;
 }

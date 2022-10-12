@@ -7,18 +7,67 @@
     <title>Scoreboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-    <script src="index.js"></script>
+    <h1 id="title" style="text-align:center">Scoreboard</h1>
     <!-- Team names -->
     <div style="clear: both">
-        <h1 id="headerOne" style="float: left; border-width:3px; border-style:solid; padding: 25px 25px 25px 25px;">  Team A  </h1>
-        <h1 id="headerTwo" style="float: right; border-width:3px; border-style:solid; padding: 25px 25px 25px 25px;">  Team B  </h1>
+        <h2 id="headerOne" style="float: left; border-width:3px; border-style:solid; padding: 25px 25px 25px 25px;">  Team A  </h2>
+        <h2 id="headerTwo" style="float: right; border-width:3px; border-style:solid; padding: 25px 25px 25px 25px;">  Team B  </h2>
+    </div>
+    <!-- Cards -->
+    <div style="clear: both">
+        <h5 id="teamAYellow" style="float: left; border-width:1px; border-style:solid; padding: 25px 25px 25px 25px;">  Yellow Cards </h5>
+        <h5 id="teamARed" style="float: right; border-width:1px; border-style:solid; padding: 25px 25px 25px 25px;">  Red Cards  </h5>
+        <h5 id="teamBYellow" style="float: left; border-width:1px; border-style:solid; padding: 25px 25px 25px 25px;">  Yellow Cards </h5>
+        <h5 id="teamBRed" style="float: right; border-width:1px; border-style:solid; padding: 25px 25px 25px 25px;">  Red Cards  </h5>
     </div>
     <!-- Screen buttons -->
-    <button onclick="openForm()" id="addGoalButton" type="button" class="btn btn-primary btn-lg">ADD GOAL</button>
-    <button onclick="openForm()" id="addCardButton" type="button" class="btn btn-primary btn-lg">ADD CARD</button>
-
-</div>
+    <button onclick="openAddGoalForm()" id="addGoalButton" type="button" class="btn btn-outline-dark btn-lg">ADD GOAL</button>
+    <button onclick="openAddCardForm()" id="addCardButton" type="button" class="btn btn-outline-dark btn-lg">ADD CARD</button>
+    <!-- Add goal popup form -->
+    <div class="form-popup" id="addGoalForm">
+        <!-- <form class="form-container"> -->
+            
+            <label for="team"><b>Team</b></label>
+            <input type="text" id="teamInput" placeholder="Enter Team Name" name="team" required>
+            
+            <label for="player"><b>Player</b></label>
+            <input type="text" id="playerInput" placeholder="Enter Player Name" name="player" required>
+            
+            <label for="time"><b>Time</b></label>
+            <input type="text" id="timeInput" placeholder="Enter time" name="time" required>
+            
+            <!-- <button type="submit" class="btn" id="submitGoalButton" onclick="submitGoalButton()">Submit</button> -->
+            <!-- <button type="button" class="btn cancel" onclick="closeAddGoalForm()">Close</button> -->
+            <!-- <button type="button" class="btn cancel" onclick="closeAddGoalForm()">Close</button> -->
+            <button class="btn" id="submitGoalButton">Submit</button>
+        <!-- </form> -->
+    </div>
+    <!-- Add card popup form -->
+    <div class="form-popup" id="addCardForm">
+        <form method="post" class="form-container">
+            <label for="color"><b>Color</b></label>
+            <input type="text" placeholder="Enter Card Color" name="color" required>
+            
+            <label for="team"><b>Team</b></label>
+            <input type="text" placeholder="Enter Team Name" name="team" required>
+            
+            <label for="player"><b>Player</b></label>
+            <input type="text" placeholder="Enter Player Name" name="player" required>
+            
+            <label for="time"><b>Time</b></label>
+            <input type="text" placeholder="Enter time" name="time" required>
+            
+            <button type="submit" class="btn" id="submitCardButton" onclick="submitCardButton()">Submit</button>
+            <button type="button" class="btn cancel" onclick="closeAddCardForm()">Close</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -4,12 +4,16 @@ const addCardButton = document.getElementById("addCardButton");
 const submitGoalButton = document.getElementById("submitGoalButton");
 const submitCardButton = document.getElementById("submitCardButton");
 
+const goalTeam = document.getElementById("teamInput");
+const goalPlayer = document.getElementById("playerInput");
+const goalTime = document.getElementById("timeInput");
 
 teamAGoals = [];
 teamBGoals = [];
 
 teamACards = [];
 teamBCards = [];
+
 
 class Goal{
     constructor(team, player, time){
@@ -19,7 +23,7 @@ class Goal{
     }
 
     addGoal(){
-        if (this.team == "TeamA"){
+        if (this.team == "Team A"){
             teamAGoals.push(this);
         }
 
@@ -78,13 +82,16 @@ function closeAddCardForm(){
     document.getElementById("addCardForm").style.display = "none";
 }
 
-submitGoalButton.addEventListener("click", () => {
-    goalTeam = document.getElementById("addGoalForm").elements.namedItem("team").value;
-    goalPlayer = document.getElementById("addGoalForm").elements.namedItem("player").value;
-    goalTime = document.getElementById("addGoalForm").elements.namedItem("time").value;
 
-    newGoal = Goal(goalTeam, goalPlayer, goalTime);
+submitGoalButton.addEventListener("click", () => {
+    console.log(goalTeam.value);
+    console.log(goalPlayer.value);
+    console.log(goalTime.value);
+
+
+    newGoal = new Goal(goalTeam.value, goalPlayer.value, goalTime.value);
     newGoal.addGoal();
+    console.log(teamAGoals)
 })
 
 submitCardButton.addEventListener("click", () => {
