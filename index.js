@@ -4,10 +4,12 @@ const addGoalButton = document.getElementById("addGoalButton");
 const addCardButton = document.getElementById("addCardButton");
 const timer = document.getElementById("timer");
 // const TIME_LIMIT = 5400;
-// startTimer();
+
 const TIME_LIMIT = 20;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
+let timerInterval = null;
+startTimer();
 
 // form buttons - submit & close
 const submitGoalButton = document.getElementById("submitGoalButton");
@@ -124,15 +126,15 @@ function formatTimeLeft(time) {
 
 timeLeftParagraph.textContent  = formatTimeLeft(TIME_LIMIT);
 
-// function startTimer() {
-//     timerInterval = setInterval(() => {
-//     timePassed = timePassed += 1;
-//     timeLeft = TIME_LIMIT - timePassed;
-//     document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
+function startTimer() {
+    timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
       
-//       setCircleDasharray();
-//     }, 1000);
-// }
+      setCircleDasharray();
+    }, 1000);
+}
 
 // // Divides time left by the defined time limit.
 // function calculateTimeFraction() {
