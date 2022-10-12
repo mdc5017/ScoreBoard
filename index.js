@@ -98,6 +98,8 @@ function closeAddCardForm(){
     document.getElementById("addCardForm").style.display = "none";
 }
 
+// timer functions
+
 function formatTimeLeft(time) {
     // The largest round integer less than or equal to the result of time divided being by 60.
     const minutes = Math.floor(time / 60);
@@ -116,16 +118,29 @@ function formatTimeLeft(time) {
 
 function startTimer() {
     timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
       
-      // The amount of time passed increments by one
-      timePassed = timePassed += 1;
-      timeLeft = TIME_LIMIT - timePassed;
-      
-      // The time left label is updated
-      document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
+      setCircleDasharray();
     }, 1000);
 }
 
+// Divides time left by the defined time limit.
+function calculateTimeFraction() {
+    const rawTimeFraction = timeLeft / TIME_LIMIT;
+    return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+  }
+      
+  // Update the dasharray value as time passes, starting with 283
+function setCircleDasharray() {
+    const circleDasharray = `${(
+      calculateTimeFraction() * FULL_DASH_ARRAY
+    ).toFixed(0)} 283`;
+    document
+      .getElementById("base-timer-path-remaining")
+      .setAttribute("stroke-dasharray", circleDasharray);
+}
 
 // event listeners
 
