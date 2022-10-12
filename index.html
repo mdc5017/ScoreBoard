@@ -61,6 +61,7 @@
     <!-- End match popup form -->
     <div class="form-popup" id="winnerDisplay">
             <p id="endOfGameResult"></p>
+            
     </div>
     <!-- Timer -->
     <div class="base-timer" id="timer">
@@ -83,11 +84,15 @@
         <span id="base-timer-label" class="base-timer__label">
             <p id="timeLeft"></p>
         </span>
-      </div>
-    <div id="rectangle1"></div>
-    <div id="rectangle2"></div>
-    <div id="rectangle3"></div>
-    <div id="rectangle4"></div>
+    </div>
+    <script>
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 1000);
+        };
+    </script>
     <script src="index.js"></script>
+    <script src="confetti.js"></script>
 </body>
 </html>

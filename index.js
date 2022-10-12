@@ -113,6 +113,7 @@ function closeAddCardForm(){
 }
 
 function openWinnerDisplay(){
+    start();
     winnerDisplay.style.display = "block";
 }
 
