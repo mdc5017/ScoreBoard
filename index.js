@@ -4,6 +4,7 @@ const addGoalButton = document.getElementById("addGoalButton");
 const addCardButton = document.getElementById("addCardButton");
 const timer = document.getElementById("timer");
 const winnerDisplay = document.getElementById("winnerDisplay");
+const endOfGameText = document.getElementById("endOfGameResult");
 
 // const TIME_LIMIT = 5400;
 
@@ -152,7 +153,7 @@ function startTimer() {
                 openWinnerDisplay();
             }
             timeLeftParagraph.textContent = "0:00";
-            document.getElementById("endOfGameResult").textContent(endOfGameResult());
+            endOfGameText.textContent(endOfGameResult());
         }
        
         setCircleDasharray();
