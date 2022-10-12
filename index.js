@@ -138,20 +138,20 @@ function startTimer() {
 }
 
 // // Divides time left by the defined time limit.
-// function calculateTimeFraction() {
-//     const rawTimeFraction = timeLeft / TIME_LIMIT;
-//     return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-//   }
+function calculateTimeFraction() {
+    const rawTimeFraction = timeLeft / TIME_LIMIT;
+    return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+  }
       
-//   // Update the dasharray value as time passes, starting with 283
-// function setCircleDasharray() {
-//     const circleDasharray = `${(
-//       calculateTimeFraction() * FULL_DASH_ARRAY
-//     ).toFixed(0)} 283`;
-//     document
-//       .getElementById("base-timer-path-remaining")
-//       .setAttribute("stroke-dasharray", circleDasharray);
-// }
+  // Update the dasharray value as time passes, starting with 283
+function setCircleDasharray() {
+    const circleDasharray = `${(
+      calculateTimeFraction() * FULL_DASH_ARRAY
+    ).toFixed(0)} 283`;
+    document
+      .getElementById("base-timer-path-remaining")
+      .setAttribute("stroke-dasharray", circleDasharray);
+}
 
 // event listeners
 
