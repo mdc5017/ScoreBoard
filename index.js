@@ -108,6 +108,8 @@ function openAddGoalForm(){
 
 function closeAddGoalForm(){
     document.getElementById("addGoalForm").style.display = "none";
+    teamAGoalsCount.textContent = teamAGoals.length;
+    teamBGoalsCount.textContent = teamBGaols.length;
 }
 
 function openAddCardForm(){
@@ -116,8 +118,7 @@ function openAddCardForm(){
 
 function closeAddCardForm(){
     document.getElementById("addCardForm").style.display = "none";
-    teamAGoalsCount.textContent = teamAGoals.length;
-    teamBGoalsCount.textContent = teamBGaols.length;
+    
 }
 
 function openWinnerDisplay(){
