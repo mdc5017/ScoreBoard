@@ -29,6 +29,7 @@ const cardTime = document.getElementById("cardTimeInput");
 
 // paragraph elements
 const timeLeftParagraph = document.getElementById("timeLeft");
+const timerRemaining = document.getElementById("base-timer-path-remaining");
 
 teamAGoals = [];
 teamBGoals = [];
@@ -148,9 +149,8 @@ function setCircleDasharray() {
     const circleDasharray = `${(
       calculateTimeFraction() * FULL_DASH_ARRAY
     ).toFixed(0)} 283`;
-    document
-      .getElementById("base-timer-path-remaining")
-      .setAttribute("stroke-dasharray", circleDasharray);
+    //document.getElementById("base-timer-path-remaining").setAttribute("stroke-dasharray", circleDasharray);
+    timerRemaining.setAttribute("stroke-dasharray", circleDasharray);
 }
 
 // event listeners
