@@ -85,10 +85,10 @@ class Card{
 
 function endOfGameResult(){
     if (teamAGoals.length > teamBGoals.length){
-        return("Winner: Team A");
+        return("Team A wins");
     }
     else if (teamAGoals.length , teamBGoals.length){
-        return("Winner: Team B");
+        return("Team B wins");
     }
     else{
         return("Draw");
