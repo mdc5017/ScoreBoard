@@ -3,14 +3,16 @@ const body = document.body;
 const addGoalButton = document.getElementById("addGoalButton");
 const addCardButton = document.getElementById("addCardButton");
 const timer = document.getElementById("timer");
+
 // const TIME_LIMIT = 5400;
 
-const TIME_LIMIT = 20;
+const TIME_LIMIT = 3;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 const FULL_DASH_ARRAY = 283
 startTimer();
+
 
 // form buttons - submit & close
 const submitGoalButton = document.getElementById("submitGoalButton");
@@ -121,7 +123,9 @@ function formatTimeLeft(time) {
     if (seconds < 10) {
       seconds = `0${seconds}`;
     }
-  
+
+    
+    
     // The output in MM:SS format
     return `${minutes}:${seconds}`;
 }
@@ -130,14 +134,18 @@ timeLeftParagraph.textContent  = formatTimeLeft(TIME_LIMIT);
 
 function startTimer() {
     timerInterval = setInterval(() => {
-    timePassed = timePassed += 1;
-    timeLeft = TIME_LIMIT - timePassed;
-    //document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
-    timeLeftParagraph.textContent  = formatTimeLeft(timeLeft);
-    if (timeLeft== "0:00"){
-        timeLeftParagraph.textContent = "0:00";
-    }
-    setCircleDasharray();
+        timePassed = timePassed += 1;
+        timeLeft = TIME_LIMIT - timePassed;
+        //document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
+        timeLeftParagraph.textContent  = formatTimeLeft(timeLeft);
+        if (timeLeft < 1){
+            timerRemaining.style.color = "grey";  
+        }
+        if (timeLeft < 0){
+            timeLeftParagraph.textContent = "0:00";
+        }
+       
+        setCircleDasharray();
     }, 1000);
 }
 
