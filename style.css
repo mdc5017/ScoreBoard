@@ -34,13 +34,13 @@
     top: 50%;
 }
 
-#addGoalForm {
+#addGoalButton {
     position: absolute;
     left: 30%;
     top: 80%; 
 }
 
-#addCardForm {
+#addCardButton {
     position: absolute;
     right: 30%;
     top: 80%; 
@@ -48,8 +48,20 @@
 
 #addGoalForm {
     display: none;
+    position: absolute;
+    text-align: center;
+    left: 17%;
+    top: 65%;
+    border: 3px solid #999999;
+    padding: 20px 20px 20px 20px
 }
 
 #addCardForm {
     display: none;
+    position: absolute;
+    text-align: center;
+    right: 6%;
+    top: 65%;
+    border: 3px solid #999999;
+    padding: 20px 20px 20px 20px
 }
