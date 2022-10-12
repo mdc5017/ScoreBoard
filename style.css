@@ -65,3 +65,32 @@
     border: 3px solid #999999;
     padding: 20px 20px 20px 20px
 }
+
+#timer {
+    position: absolute;
+    left: 39%;
+    top: 22%;
+    height: 250px;
+    width: 250px;
+}
+
+#timerCircle {
+    fill: none;
+    stroke: none;
+}
+
+#timerPath {
+    stroke-width: 7px;
+    stroke: grey;
+}
+
+#base-timer-label {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}

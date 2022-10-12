@@ -3,8 +3,11 @@ const body = document.body;
 const addGoalButton = document.getElementById("addGoalButton");
 const addCardButton = document.getElementById("addCardButton");
 const timer = document.getElementById("timer");
-const TIME_LIMIT = 5400;
-startTimer();
+// const TIME_LIMIT = 5400;
+// startTimer();
+const TIME_LIMIT = 20;
+let timePassed = 0;
+let timeLeft = TIME_LIMIT;
 
 // form buttons - submit & close
 const submitGoalButton = document.getElementById("submitGoalButton");
@@ -21,6 +24,9 @@ const cardColor = document.getElementById("cardColorInput");
 const cardTeam = document.getElementById("cardTeamInput");
 const cardPlayer = document.getElementById("cardPlayerInput");
 const cardTime = document.getElementById("cardTimeInput");
+
+// paragraph elements
+const timeLeftParagraph = document.getElementById("timeLeft");
 
 teamAGoals = [];
 teamBGoals = [];
@@ -111,36 +117,40 @@ function formatTimeLeft(time) {
     if (seconds < 10) {
       seconds = `0${seconds}`;
     }
+
+    timeLeftParagraph.textContent = `${minutes}:${seconds}`;
   
     // The output in MM:SS format
-    return `${minutes}:${seconds}`;
+    // return `${minutes}:${seconds}`;
 }
 
-function startTimer() {
-    timerInterval = setInterval(() => {
-    timePassed = timePassed += 1;
-    timeLeft = TIME_LIMIT - timePassed;
-    document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
-      
-      setCircleDasharray();
-    }, 1000);
-}
+formatTimeLeft(TIME_LIMIT)
 
-// Divides time left by the defined time limit.
-function calculateTimeFraction() {
-    const rawTimeFraction = timeLeft / TIME_LIMIT;
-    return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-  }
+// function startTimer() {
+//     timerInterval = setInterval(() => {
+//     timePassed = timePassed += 1;
+//     timeLeft = TIME_LIMIT - timePassed;
+//     document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
       
-  // Update the dasharray value as time passes, starting with 283
-function setCircleDasharray() {
-    const circleDasharray = `${(
-      calculateTimeFraction() * FULL_DASH_ARRAY
-    ).toFixed(0)} 283`;
-    document
-      .getElementById("base-timer-path-remaining")
-      .setAttribute("stroke-dasharray", circleDasharray);
-}
+//       setCircleDasharray();
+//     }, 1000);
+// }
+
+// // Divides time left by the defined time limit.
+// function calculateTimeFraction() {
+//     const rawTimeFraction = timeLeft / TIME_LIMIT;
+//     return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+//   }
+      
+//   // Update the dasharray value as time passes, starting with 283
+// function setCircleDasharray() {
+//     const circleDasharray = `${(
+//       calculateTimeFraction() * FULL_DASH_ARRAY
+//     ).toFixed(0)} 283`;
+//     document
+//       .getElementById("base-timer-path-remaining")
+//       .setAttribute("stroke-dasharray", circleDasharray);
+// }
 
 // event listeners
 
