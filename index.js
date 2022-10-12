@@ -3,6 +3,7 @@ const body = document.body;
 const addGoalButton = document.getElementById("addGoalButton");
 const addCardButton = document.getElementById("addCardButton");
 const timer = document.getElementById("timer");
+const winnerDisplay = document.getElementById("winnerDisplay");
 
 // const TIME_LIMIT = 5400;
 
@@ -83,13 +84,13 @@ class Card{
 
 function endOfGameResult(){
     if (teamAGoals.length > teamBGoals.length){
-        console.log("Winner: Team A");
+        return("Winner: Team A");
     }
     else if (teamAGoals.length , teamBGoals.length){
-        console.log("Winner: Team B");
+        return("Winner: Team B");
     }
     else{
-        console.log("Draw");
+        return("Draw");
     }
 
 }
@@ -109,6 +110,11 @@ function openAddCardForm(){
 function closeAddCardForm(){
     document.getElementById("addCardForm").style.display = "none";
 }
+
+function openWinnerDisplay(){
+    winnerDisplay.style.display = "block";
+}
+
 
 // timer functions
 
@@ -141,8 +147,12 @@ function startTimer() {
         if (timeLeft < 1){
             timerRemaining.style.color = "grey";  
         }
-        if (timeLeft < 0){
+        if (timeLeft <= 0){
+            if (timeLeft == 0){
+                openWinnerDisplay();
+            }
             timeLeftParagraph.textContent = "0:00";
+            document.getElementById("endOfGameResult").textContent(endOfGameResult());
         }
        
         setCircleDasharray();
