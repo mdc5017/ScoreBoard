@@ -117,14 +117,12 @@ function formatTimeLeft(time) {
     if (seconds < 10) {
       seconds = `0${seconds}`;
     }
-
-    timeLeftParagraph.textContent = `${minutes}:${seconds}`;
   
     // The output in MM:SS format
-    // return `${minutes}:${seconds}`;
+    return `${minutes}:${seconds}`;
 }
 
-formatTimeLeft(TIME_LIMIT)
+timeLeftParagraph.textContent  = formatTimeLeft(TIME_LIMIT);
 
 // function startTimer() {
 //     timerInterval = setInterval(() => {
