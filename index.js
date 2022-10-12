@@ -130,8 +130,9 @@ function startTimer() {
     timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
-    document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
-      
+    //document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
+    timeLeftParagraph.textContent  = formatTimeLeft(timeLeft);
+ 
       setCircleDasharray();
     }, 1000);
 }
