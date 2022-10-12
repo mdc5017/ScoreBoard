@@ -9,6 +9,7 @@ const TIME_LIMIT = 20;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
+const FULL_DASH_ARRAY = 283
 startTimer();
 
 // form buttons - submit & close
@@ -163,7 +164,7 @@ submitGoalButton.addEventListener("click", () => {
 })
 
 submitCardButton.addEventListener("click", () => {
-    newCard = Card(cardColor, cardTeam, cardPlayer, cardTime);
+    newCard = new Card(cardColor, cardTeam, cardPlayer, cardTime);
     newCard.addCard();
 })
 
