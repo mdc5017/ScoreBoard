@@ -6,6 +6,9 @@ const timer = document.getElementById("timer");
 const winnerDisplay = document.getElementById("winnerDisplay");
 const endOfGameText = document.getElementById("endOfGameResult");
 
+const teamAGoalsCount = document.getElementById("teamAGoalsCount");
+const teamBGoalsCount = document.getElementById("teamBGoalsCount");
+
 // const TIME_LIMIT = 5400;
 
 const TIME_LIMIT = 3;
@@ -41,6 +44,9 @@ teamBGoals = [];
 
 teamACards = [];
 teamBCards = [];
+
+teamAGoalsCount.textContent = 0;
+teamBGoalsCount.textContent = 0;
 
 // classes
 class Goal{
@@ -110,6 +116,8 @@ function openAddCardForm(){
 
 function closeAddCardForm(){
     document.getElementById("addCardForm").style.display = "none";
+    teamAGoalsCount.textContent = teamAGoals.length;
+    teamBGoalsCount.textContent = teamBGaols.length;
 }
 
 function openWinnerDisplay(){
