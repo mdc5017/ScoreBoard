@@ -153,7 +153,7 @@ function startTimer() {
                 openWinnerDisplay();
             }
             timeLeftParagraph.textContent = "0:00";
-            endOfGameText.textContent(endOfGameResult());
+            endOfGameText.textContent = endOfGameResult();
         }
        
         setCircleDasharray();
