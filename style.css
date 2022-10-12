@@ -14,24 +14,28 @@
     position: absolute;
     left: 11%;
     top: 50%;
+    background-color: yellow;
 }
 
 #teamARed{
     position: absolute;
     left: 33%;
     top: 50%;
+    background-color: red;
 }
 
 #teamBYellow{
     position: absolute;
     right: 33%;
     top: 50%;
+    background-color: yellow;
 }
 
 #teamBRed{
     position: absolute;
     right: 11%;
     top: 50%;
+    background-color: red;
 }
 
 #addGoalButton {
@@ -46,6 +50,11 @@
     top: 80%; 
 }
 
+#endMatchButton {
+    position: absolute;
+    left: 44%;
+    top: 90%;
+}
 #addGoalForm {
     display: none;
     position: absolute;
@@ -53,7 +62,7 @@
     left: 17%;
     top: 65%;
     border: 3px solid #999999;
-    padding: 20px 20px 20px 20px
+    padding: 20px 20px 20px 20px;
 }
 
 #addCardForm {
@@ -63,7 +72,7 @@
     right: 6%;
     top: 65%;
     border: 3px solid #999999;
-    padding: 20px 20px 20px 20px
+    padding: 20px 20px 20px 20px;
 }
 
 #timer {
@@ -99,20 +108,27 @@
     color: green;
     stroke-width: 7px;
 
-  /* Rounds the line endings to create a seamless circle */
   stroke-linecap: round;
 
-  /* Makes sure the animation starts at the top of the circle */
   transform: rotate(90deg);
   transform-origin: center;
 
-  /* One second aligns with the speed of the countdown timer */
   transition: 1s linear all;
 
-  /* Allows the ring to change color when the color value updates */
   stroke: currentColor;
 }
 
 #base-timer__svg {
     transform: scaleX(-1);
+}
+
+#winnerDisplay {
+    display: none;
+    position: absolute;
+    text-align: center;
+    right: 45%;
+    top: 70%;
+    border: 3px solid #999999;
+    padding: 10px 30px 5px 30px;
+    font-size: 23px;
 }

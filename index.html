@@ -19,7 +19,7 @@
     <!-- Cards -->
     <div style="clear: both">
         <h5 id="teamAYellow" style="float: left; border-width:1px; border-style:solid; padding: 25px 25px 25px 25px;">  Yellow Cards </h5>
-        <h5 id="teamARed" style="float: right; border-width:1px; border-style:solid; padding: 25px 25px 25px 25px;">  Red Cards  </h5>
+        <h5 id="teamARed" style="float: right; border-width:1px; border-style:solid; padding: 25px 30px 25px 25px;">  Red Cards  </h5>
         <h5 id="teamBYellow" style="float: left; border-width:1px; border-style:solid; padding: 25px 25px 25px 25px;">  Yellow Cards </h5>
         <h5 id="teamBRed" style="float: right; border-width:1px; border-style:solid; padding: 25px 25px 25px 25px;">  Red Cards  </h5>
     </div>
@@ -28,7 +28,6 @@
     <button onclick="openAddCardForm()" id="addCardButton" type="button" class="btn btn-outline-dark btn-lg">ADD CARD</button>
     <!-- Add goal popup form -->
     <div class="form-popup" id="addGoalForm">
-        <!-- <form class="form-container"> -->
             
             <label for="team"><b>Team</b></label>
             <input type="text" id="goalTeamInput" placeholder="Enter Team Name" name="team" required>
@@ -41,7 +40,6 @@
             
             <button class="btn" id="submitGoalButton">Submit</button>
             <button class="btn" id="closeGoalButton">Close</button>
-        <!-- </form> -->
     </div>
     <!-- Add card popup form -->
     <div class="form-popup" id="addCardForm">
@@ -59,7 +57,10 @@
             
             <button class="btn" id="submitCardButton">Submit</button>
             <button class="btn" id="closeCardButton">Close</button>
-        </form>
+    </div>
+    <!-- End match popup form -->
+    <div class="form-popup" id="winnerDisplay">
+            <p id="endOfGameResult"></p>
     </div>
     <!-- Timer -->
     <div class="base-timer" id="timer">
@@ -83,7 +84,10 @@
             <p id="timeLeft"></p>
         </span>
       </div>
-
+    <div id="rectangle1"></div>
+    <div id="rectangle2"></div>
+    <div id="rectangle3"></div>
+    <div id="rectangle4"></div>
     <script src="index.js"></script>
 </body>
 </html>
