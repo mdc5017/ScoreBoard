@@ -75,11 +75,13 @@ class Goal{
             teamAGoals.push(this);
         }
 
-        else{
+        else if (this.team == "Team B"){
             teamBGoals.push(this);
         }
-    }
-    
+        else {
+            console.log("what's your problem?");
+        }
+    }  
 }
 
 class Card{
@@ -102,10 +104,12 @@ class Card{
             teamBYellowCards.push(this);
         }
 
-        else{
+        else if (this.team == "Team B" && this.color == "red"){
             teamBRedCards.push(this);
-            }
-        
+            }   
+        else{
+            console.log("what's your problem?");
+        }
     }
 }
 
