@@ -135,3 +135,31 @@
     padding: 10px 30px 5px 30px;
     font-size: 40px;
 }
+
+#teamAGoalsCount {
+    font-family: 'Digital Numbers', sans-serif;
+}
+
+#teamBGoalsCount {
+    font-family: 'Digital Numbers', sans-serif;
+}
+
+#teamAGoals {
+    font-family: 'Digital Numbers', sans-serif;
+}
+
+#teamAYellowCards {
+    font-family: 'Digital Numbers', sans-serif;
+}
+
+#teamARedCards {
+    font-family: 'Digital Numbers', sans-serif;
+}
+
+#teamBYellowCards {
+    font-family: 'Digital Numbers', sans-serif;
+}
+
+#teamBRedCards {
+    font-family: 'Digital Numbers', sans-serif;
+}

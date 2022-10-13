@@ -7,6 +7,7 @@
     <title>Scoreboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="http://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet">
 
 </head>
 <body>
@@ -61,7 +62,6 @@
     <!-- End match popup form -->
     <div class="form-popup" id="winnerDisplay">
             <p id="endOfGameResult"></p>
-            
     </div>
     <!-- Timer -->
     <div class="base-timer" id="timer">
@@ -84,6 +84,26 @@
         <span id="base-timer-label" class="base-timer__label">
             <p id="timeLeft"></p>
         </span>
+    </div>
+    <!-- Goals -->
+    <div>
+        <p id="teamAGoalsCount"></p>
+    </div>
+    <div>
+        <p id="teamBGoalsCount"></p>
+    </div>
+    <!-- Cards -->
+    <div>
+        <p id="teamACardsCount"></p>
+    </div>
+    <div>
+        <p id="teamACardsCount"></p>
+    </div>
+    <div>
+        <p id="teamBCardsCount"></p>
+    </div>
+    <div>
+        <p id="teamBCardsCount"></p>
     </div>
     <script>
         const start = () => {
