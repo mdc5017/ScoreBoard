@@ -26,8 +26,8 @@ startTimer();
 // form buttons - submit & close
 const submitGoalButton = document.getElementById("submitGoalButton");
 const submitCardButton = document.getElementById("submitCardButton");
-const closeGoalButton = document.getElementById("closeGoalButton");
-const closeCardButton = document.getElementById("closeCardButton");
+// const closeGoalButton = document.getElementById("closeGoalButton");
+// const closeCardButton = document.getElementById("closeCardButton");
 
 // form input
 const goalTeam = document.getElementById("goalTeamInput");
@@ -221,17 +221,19 @@ function setCircleDasharray() {
 submitGoalButton.addEventListener("click", () => {
     newGoal = new Goal(goalTeam.value, goalPlayer.value, goalTime.value);
     newGoal.addGoal();
+    closeAddGoalForm();
 })
 
 submitCardButton.addEventListener("click", () => {
     newCard = new Card(cardColor.value, cardTeam.value, cardPlayer.value, cardTime.value);
     newCard.addCard();
-})
-
-closeGoalButton.addEventListener("click", ()=> {
-    closeAddGoalForm();
-})
-
-closeCardButton.addEventListener("click", ()=>{
     closeAddCardForm();
 })
+
+// closeGoalButton.addEventListener("click", ()=> {
+//     closeAddGoalForm();
+// })
+
+// closeCardButton.addEventListener("click", ()=>{
+//     closeAddCardForm();
+// })
