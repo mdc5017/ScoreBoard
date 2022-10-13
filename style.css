@@ -60,12 +60,15 @@
     left: 44%;
     top: 90%;
 }
+
 #addGoalForm {
     display: none;
     position: absolute;
+    z-index: 1;
     text-align: center;
-    left: 26%;
-    top: 65%;
+    left: 27%;
+    top: 30%;
+    background-color: rgba(255, 255, 255, 1);
     border: 3px solid #999999;
     padding: 20px 20px 20px 20px;
 }
@@ -73,9 +76,11 @@
 #addCardForm {
     display: none;
     position: absolute;
+    z-index: 1;
     text-align: center;
     left: 22%;
-    top: 65%;
+    top: 30%;
+    background-color: rgba(255, 255, 255, 1);
     border: 3px solid #999999;
     padding: 20px 20px 20px 20px;
 }
@@ -145,7 +150,7 @@
     font-family: 'Digital Numbers', sans-serif;
     font-size: 230px;
     position: absolute;
-    left: 19%;
+    left: 19.5%;
     top: 19%;
 }
 
@@ -153,26 +158,38 @@
     font-family: 'Digital Numbers', sans-serif;
     font-size: 230px;
     position: absolute;
-    left: 59%;
-    top: 29%;
-}
-
-#teamAGoals {
-    font-family: 'Digital Numbers', sans-serif;
+    left: 70.5%;
+    top: 19%;
 }
 
 #teamAYellowCards {
     font-family: 'Digital Numbers', sans-serif;
+    font-size: 100px;
+    position: absolute;
+    left: 12.5%;
+    top: 57%;
 }
 
 #teamARedCards {
     font-family: 'Digital Numbers', sans-serif;
+    font-size: 100px;
+    position: absolute;
+    left: 31.5%;
+    top: 57%;
 }
 
 #teamBYellowCards {
     font-family: 'Digital Numbers', sans-serif;
+    font-size: 100px;
+    position: absolute;
+    left: 63.75%;
+    top: 57%;
 }
 
 #teamBRedCards {
     font-family: 'Digital Numbers', sans-serif;
+    font-size: 100px;
+    position: absolute;
+    left: 83.4%;
+    top: 57%;
 }
