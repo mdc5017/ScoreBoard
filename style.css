@@ -193,3 +193,10 @@
     left: 83.4%;
     top: 57%;
 }
+
+#latestUpdate {
+    font-size: 25px;
+    position: absolute;
+    left: 30%;
+    top: 90%;
+}
