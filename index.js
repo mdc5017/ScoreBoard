@@ -6,6 +6,10 @@ const timer = document.getElementById("timer");
 const winnerDisplay = document.getElementById("winnerDisplay");
 const endOfGameText = document.getElementById("endOfGameResult");
 
+const teamAGoalsCount = document.getElementById("teamAGoalsCount");
+const teamBGoalsCount = document.getElementById("teamBGoalsCount");
+
+teamAGoalsCount.textContent = "3";
 // const TIME_LIMIT = 5400;
 
 const TIME_LIMIT = 3;
