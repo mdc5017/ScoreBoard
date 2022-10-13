@@ -91,24 +91,21 @@ class Card{
     }
 
     addCard(){
-        if (this.team == "Team A"){
-            if (this.color == "yellow"){
+        if (this.team == "Team A" && this.color == "yellow"){
                 teamAYellowCards.push(this);
             }
-            else{
+        else if (this.team == "Team A" && this.color == "red"){
                 teamARedCards.push(this);
             }
-            
+
+        else if (this.team == "Team B" && this.color == "yellow"){
+            teamBYellowCards.push(this);
         }
 
         else{
-            if (this.color == "yellow"){
-                teamBYellowCards.push(this);
+            teamBRedCards.push(this);
             }
-            else{
-                teamBRedCards.push(this);
-            }
-        }
+        
     }
 }
 
@@ -143,7 +140,7 @@ function openAddCardForm(){
 
 function closeAddCardForm(){
     document.getElementById("addCardForm").style.display = "none";
-    console.log(teamAYellowCards.length.toString());
+//     console.log(teamAYellowCards.length.toString());
     teamAYellowCardsCount.textContent = teamAYellowCards.length.toString();
     teamARedCardsCount.textContent = teamARedCards.length.toString();
     teamBYellowCardsCount.textContent = teamBYellowCards.length.toString();
@@ -223,7 +220,7 @@ submitGoalButton.addEventListener("click", () => {
 })
 
 submitCardButton.addEventListener("click", () => {
-    newCard = new Card(cardColor, cardTeam, cardPlayer, cardTime);
+    newCard = new Card(cardColor.value, cardTeam.value, cardPlayer.value, cardTime.value);
     newCard.addCard();
 })
 
