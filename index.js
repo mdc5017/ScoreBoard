@@ -3,8 +3,7 @@ const body = document.body;
 const addGoalButton = document.getElementById("addGoalButton");
 const addCardButton = document.getElementById("addCardButton");
 const timer = document.getElementById("timer");
-const winnerDisplay = document.getElementById("winnerDisplay");
-const endOfGameText = document.getElementById("endOfGameResult");
+const latestUpdate = document.getElementById("latestUpdate");
 
 const teamAGoalsCount = document.getElementById("teamAGoalsCount");
 const teamBGoalsCount = document.getElementById("teamBGoalsCount");
@@ -12,6 +11,9 @@ const teamAYellowCardsCount = document.getElementById("teamAYellowCards");
 const teamARedCardsCount = document.getElementById("teamARedCards");
 const teamBYellowCardsCount = document.getElementById("teamBYellowCards");
 const teamBRedCardsCount = document.getElementById("teamBRedCards");
+
+const winnerDisplay = document.getElementById("winnerDisplay");
+const endOfGameText = document.getElementById("endOfGameResult");
 
 // const TIME_LIMIT = 5400;
 
@@ -26,8 +28,6 @@ startTimer();
 // form buttons - submit & close
 const submitGoalButton = document.getElementById("submitGoalButton");
 const submitCardButton = document.getElementById("submitCardButton");
-// const closeGoalButton = document.getElementById("closeGoalButton");
-// const closeCardButton = document.getElementById("closeCardButton");
 
 // form input
 const goalTeam = document.getElementById("goalTeamInput");
@@ -171,9 +171,6 @@ function formatTimeLeft(time) {
     if (seconds < 10) {
       seconds = `0${seconds}`;
     }
-
-    
-    
     // The output in MM:SS format
     return `${minutes}:${seconds}`;
 }
@@ -222,14 +219,16 @@ function setCircleDasharray() {
 submitGoalButton.addEventListener("click", () => {
     newGoal = new Goal(goalTeam.value, goalPlayer.value, goalTime.value);
     newGoal.addGoal();
-    console.log(`${goalTime.value} Player ${goalPlayer.value} from ${goalTeam.value} scored a goal.`)
+    console.log(`${goalTime.value} Player ${goalPlayer.value} from ${goalTeam.value} scored a goal.`);
+    latestUpdate.textContent = `Latest Update: ${goalTime.value} Player ${goalPlayer.value} from ${goalTeam.value} scored a goal.`;
     closeAddGoalForm();
 })
 
 submitCardButton.addEventListener("click", () => {
     newCard = new Card(cardColor.value, cardTeam.value, cardPlayer.value, cardTime.value);
     newCard.addCard();
-    console.log(`${cardTime.value} Player ${cardPlayer.value} from ${cardTeam.value} got a ${cardColor.value} card.`)
+    console.log(`${cardTime.value} Player ${cardPlayer.value} from ${cardTeam.value} got a ${cardColor.value} card.`);
+    latestUpdate.textContent = `Latest Update: ${cardTime.value} Player ${cardPlayer.value} from ${cardTeam.value} got a ${cardColor.value} card.`;
     closeAddCardForm();
 })
 
