@@ -46,20 +46,20 @@ const timerRemaining = document.getElementById("base-timer-path-remaining");
 teamAGoals = [];
 teamBGoals = [];
 
-teamAYellowCards = [];
-teamARedCards = [];
-teamBYellowCards = [];
-teamBRedCards = [];
+let teamAYellowCards = [];
+let teamARedCards = [];
+let teamBYellowCards = [];
+let teamBRedCards = [];
 
 teamAGoalsCount.textContent = "0";
 teamBGoalsCount.textContent = "0";
 //teamACardsCount.textContent = "0";
 //teamBCardsCount.textContent = "0";
 
-teamAYellowCards = "0";
-teamARedCards = "0";
-teamBYellowCards = "0";
-teamBRedCards = "0";
+teamAYellowCardsCount.textContent = "0";
+teamARedCardsCount.textContent = "0";
+teamBYellowCardsCount.textContent = "0";
+teamBRedCardsCount.textContent = "0";
 
 
 // classes
@@ -91,7 +91,7 @@ class Card{
     }
 
     addCard(){
-        if (this.team == "TeamA"){
+        if (this.team == "Team A"){
             if (this.color == "yellow"){
                 teamAYellowCards.push(this);
             }
@@ -143,9 +143,10 @@ function openAddCardForm(){
 
 function closeAddCardForm(){
     document.getElementById("addCardForm").style.display = "none";
+    console.log(teamAYellowCards.length.toString());
     teamAYellowCardsCount.textContent = teamAYellowCards.length.toString();
     teamARedCardsCount.textContent = teamARedCards.length.toString();
-    teamBYellowCardsCount.textContent = textBYellowCards.length.toString();
+    teamBYellowCardsCount.textContent = teamBYellowCards.length.toString();
     teamBRedCardsCount.textContent = teamBRedCards.length.toString();
 }
 
