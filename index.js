@@ -8,8 +8,11 @@ const endOfGameText = document.getElementById("endOfGameResult");
 
 const teamAGoalsCount = document.getElementById("teamAGoalsCount");
 const teamBGoalsCount = document.getElementById("teamBGoalsCount");
+const teamAYellowCardsCount = document.getElementById("teamAYellowCards");
+const teamARedCardsCount = document.getElementById("teamARedCards");
+const teamBYellowCardsCount = document.getElementById("teamBYellowCards");
+const teamBRedCardsCount = document.getElementById("teamBRedCards");
 
-teamAGoalsCount.textContent = "3";
 // const TIME_LIMIT = 5400;
 
 const TIME_LIMIT = 3;
@@ -43,8 +46,21 @@ const timerRemaining = document.getElementById("base-timer-path-remaining");
 teamAGoals = [];
 teamBGoals = [];
 
-teamACards = [];
-teamBCards = [];
+teamAYellowCards = [];
+teamARedCards = [];
+teamBYellowCards = [];
+teamBRedCards = [];
+
+teamAGoalsCount.textContent = "0";
+teamAGoalsCount.textContent = "0";
+teamACardsCount.textContent = "0";
+teamBCardsCount.textContent = "0";
+
+teamAYellowCards = "0";
+teamARedCards = "0";
+teamBYellowCards = "0";
+teamBRedCards = "0";
+
 
 // classes
 class Goal{
@@ -76,11 +92,22 @@ class Card{
 
     addCard(){
         if (this.team == "TeamA"){
-            teamACards.push(this);
+            if (this.color == "yellow"){
+                teamAYellowCards.push(this);
+            }
+            else{
+                teamARedCards.push(this);
+            }
+            
         }
 
         else{
-            teamBCards.push(this);
+            if (this.color == "yellow"){
+                teamBYellowCards.push(this);
+            }
+            else{
+                teamBRedCards.push(this);
+            }
         }
     }
 }
@@ -106,6 +133,8 @@ function openAddGoalForm(){
 
 function closeAddGoalForm(){
     document.getElementById("addGoalForm").style.display = "none";
+    teamAGoalsCount.textContent = teamAGoals.length.toString();
+    teamBGoalsCount.textContent = teamBGoalsCount.length.toString();
 }
 
 function openAddCardForm(){
@@ -114,6 +143,10 @@ function openAddCardForm(){
 
 function closeAddCardForm(){
     document.getElementById("addCardForm").style.display = "none";
+    teamAYellowCardsCount.textContent = teamAYellowCards.length.toString();
+    teamARedCardsCount.textContent = teamARedCards.length.toString();
+    teamBYellowCardsCount.textContent = textBYellowCards.length.toString();
+    teamBRedCardsCount.textContent = teamBRedCards.length.toString();
 }
 
 function openWinnerDisplay(){
