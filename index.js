@@ -52,9 +52,9 @@ teamBYellowCards = [];
 teamBRedCards = [];
 
 teamAGoalsCount.textContent = "0";
-teamAGoalsCount.textContent = "0";
-teamACardsCount.textContent = "0";
-teamBCardsCount.textContent = "0";
+teamBGoalsCount.textContent = "0";
+//teamACardsCount.textContent = "0";
+//teamBCardsCount.textContent = "0";
 
 teamAYellowCards = "0";
 teamARedCards = "0";
@@ -118,7 +118,7 @@ function endOfGameResult(){
     if (teamAGoals.length > teamBGoals.length){
         return("Team A wins");
     }
-    else if (teamAGoals.length , teamBGoals.length){
+    else if (teamAGoals.length < teamBGoals.length){
         return("Team B wins");
     }
     else{
@@ -134,7 +134,7 @@ function openAddGoalForm(){
 function closeAddGoalForm(){
     document.getElementById("addGoalForm").style.display = "none";
     teamAGoalsCount.textContent = teamAGoals.length.toString();
-    teamBGoalsCount.textContent = teamBGoalsCount.length.toString();
+    teamBGoalsCount.textContent = teamBGoals.length.toString();
 }
 
 function openAddCardForm(){

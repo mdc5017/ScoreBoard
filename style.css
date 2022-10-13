@@ -1,3 +1,8 @@
+#title {
+    text-align: center;
+    font-size: 76px;
+}
+
 #headerOne {
     position: absolute;
     left: 20%;
@@ -138,10 +143,18 @@
 
 #teamAGoalsCount {
     font-family: 'Digital Numbers', sans-serif;
+    font-size: 230px;
+    position: absolute;
+    left: 19%;
+    top: 19%;
 }
 
 #teamBGoalsCount {
     font-family: 'Digital Numbers', sans-serif;
+    font-size: 230px;
+    position: absolute;
+    left: 59%;
+    top: 29%;
 }
 
 #teamAGoals {
