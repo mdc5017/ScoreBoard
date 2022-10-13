@@ -222,14 +222,14 @@ function setCircleDasharray() {
 submitGoalButton.addEventListener("click", () => {
     newGoal = new Goal(goalTeam.value, goalPlayer.value, goalTime.value);
     newGoal.addGoal();
-    console.log(`${goalTime.value}: Player ${goalPlayer.value} from ${goalTeam.value} scored a goal.`)
+    console.log(`${goalTime.value} Player ${goalPlayer.value} from ${goalTeam.value} scored a goal.`)
     closeAddGoalForm();
 })
 
 submitCardButton.addEventListener("click", () => {
     newCard = new Card(cardColor.value, cardTeam.value, cardPlayer.value, cardTime.value);
     newCard.addCard();
-    console.log(`${cardTime.value}: Player ${cardPlayer.value} from ${cardTeam.value} got a ${cardColor.value} card.`)
+    console.log(`${cardTime.value} Player ${cardPlayer.value} from ${cardTeam.value} got a ${cardColor.value} card.`)
     closeAddCardForm();
 })
 
