@@ -15,7 +15,7 @@ const teamBRedCardsCount = document.getElementById("teamBRedCards");
 
 // const TIME_LIMIT = 5400;
 
-const TIME_LIMIT = 3;
+const TIME_LIMIT = 30;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -154,6 +154,7 @@ function closeAddCardForm(){
 function openWinnerDisplay(){
     start();
     winnerDisplay.style.display = "block";
+    //console.log(endOfGameResult());
 }
 
 
@@ -221,12 +222,14 @@ function setCircleDasharray() {
 submitGoalButton.addEventListener("click", () => {
     newGoal = new Goal(goalTeam.value, goalPlayer.value, goalTime.value);
     newGoal.addGoal();
+    console.log(`${goalTime.value}: Player ${goalPlayer.value} from ${goalTeam.value} scored a goal.`)
     closeAddGoalForm();
 })
 
 submitCardButton.addEventListener("click", () => {
     newCard = new Card(cardColor.value, cardTeam.value, cardPlayer.value, cardTime.value);
     newCard.addCard();
+    console.log(`${cardTime.value}: Player ${cardPlayer.value} from ${cardTeam.value} got a ${cardColor.value} card.`)
     closeAddCardForm();
 })
 
